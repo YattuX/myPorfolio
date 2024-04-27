@@ -1,9 +1,9 @@
 'use client'
 
-import { delay, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import React from 'react'
-import { InView, useInView } from 'react-intersection-observer'
+import {useInView } from 'react-intersection-observer'
 
 type Props = {
     src: string,
