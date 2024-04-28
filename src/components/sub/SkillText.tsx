@@ -11,15 +11,15 @@ export default function SkillText() {
             variants={slideInFromTop} 
             className='Welcome-box py-3 px-[15px] border border-[#7042f88b] opacity-[0.9]'>
                 <SparklesIcon className='text-[#b49bff] mr-[10px] h-5 w-5'/>
-                <h1 className='Welcome-text text-[13px]'>
-                    Thinks Better width Angular 2+
+                <h1 className='Welcome-text '>
+                    Thinks Better with Angular 2+ and next js
                 </h1>
         </motion.div>
         <motion.div
             variants={slideInFromLeft(0.5)}
             className='text-[30px] text-white font-medium mt-[10px] text-center mb-[15px]'
         >
-            Making apps with modern technologies
+            Welcome to my Stack
         </motion.div>
         <motion.div
             variants={slideInFromRight(0.5)}

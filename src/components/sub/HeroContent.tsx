@@ -9,15 +9,16 @@ import Image from 'next/image'
 export default function HeroContent() {
   return (
     <motion.div
+    id='about-me'
     initial="hidden"
     animate="visible"
-    className='flex flex-row items-center justify-center px-20 mt-[320px] w-full z-[20]'>
-        <div className='h-full w-full flx flex-col gap-5 justify-center m-auto text-start'>
+    className='flex flex-row items-center justify-center px-20 mt-[100px] w-full z-[20]'>
+        <div className='h-full w-full flex flex-col gap-5 justify-center m-auto text-start'>
             <motion.div
             variants={slideInFromTop} 
-            className='Welcome-box py-3 px-[15px] border border-[#7042f88b] opacity-[0.9]'>
+            className='Welcome-box py-2 px-[15px] border border-[#7042f88b] opacity-[0.9]'>
                 <SparklesIcon className='text-[#b49bff] mr-[10px] h-5 w-5'/>
-                <h1 className='Welcome-text text-[13px]'>Fullstack Developper Portfolio</h1>
+                <h1 className='Welcome-text '>Fullstack Developper Portfolio</h1>
             </motion.div>
 
             <motion.div
@@ -33,13 +34,14 @@ export default function HeroContent() {
             <motion.div
                 variants={slideInFromLeft(0.5)}
                 className="text-lg text-gray-400 my-5 max-w-[600px]">
-                    I&apos;m a Full Stack Software Engineer with experience in website, Mobile and Software development. Check out my project and skills.
+                    I&apos;m a Full-Stack Software Engineer with experience in web, mobile, and software development. I'm passionate about building innovative and user-friendly applications.  Explore my projects and skills to learn more about my expertise.
             </motion.div>
             <motion.a
+            href='/cv/CV_Yattara_Aboubacar.pdf'
             variants={slideInFromLeft(1)}
-            className='py-3 px-10 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]'
+            className='py-3 px-8 button-primary text-center text-white cursor-pointer rounded-lg max-w-[300px]'
             >
-                Learn More!
+                Download my resume
             </motion.a>
         </div>
         <motion.div

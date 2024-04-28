@@ -8,23 +8,26 @@ export default function NavBar() {
         <div className='w-full h-full flex flex-row items-center justify-between m-auto px-[10px]'>
             <a href="#about-me" className='h-auto w-auto flex flex-row items-center'>
                 <Image
-                    src="/NavLogo.png"
+                    src="/Logo_.png"
                     alt='logo'
                     width={70}
                     height={70}
                     className='cursor-pointer hover:animate-slowspin'
                 />
                 <span className='font-bold ml-[10px] hidden md:block text-gray-300'>
-                    WebChain Dev
+                    YattuX
                 </span>
             </a>
 
-            <div className='w-[500px] h-full flex flex-row items-center justify-between md:mr-20'>
+            <div className='hidden  md:w-[500px] h-full md:flex flex-row items-center justify-between md:mr-20'>
                 <div className='flex items-center justify-between border w-full h-auto border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200'>
                     <a href="#about-me" className='cursor-pointer'> About me</a>
-                    <a href="#skils" className='cursor-pointer'> Skills</a>
+                    <a href="#skills" className='cursor-pointer'> Skills</a>
                     <a href="#projects" className='cursor-pointer'> Projects</a>
                 </div>
+            </div>
+            <div className='flex flex-row items-center justify-center text-white text-2xl font-semibold md:hidden'>
+                YattuX
             </div>
             <div className='flex flex-row gap-5'>
                 {Socials.map((social) => (
