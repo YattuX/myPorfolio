@@ -18,7 +18,7 @@ export default function HeroContent() {
             variants={slideInFromTop} 
             className='Welcome-box py-2 px-[15px] border border-[#7042f88b] opacity-[0.9]'>
                 <SparklesIcon className=' text-[#b49bff] mr-[10px] h-5 '/>
-                <h1 className='Welcome-text text-xl'>Fullstack Developper Portfolio</h1>
+                <h1 className='text-gray-200 text-xl'>Fullstack Developper Portfolio</h1>
             </motion.div>
 
             <motion.div

@@ -9,13 +9,7 @@ export default function Projects() {
         </h1>
     
         <div className='h-full w-full flex justify-center flex-wrap md:flex-row gap-10 px-5 mt-[-40px]'>
-        <ProjectCard
-                src="/carties.PNG"
-                title='Rental Car'
-                description= "This website allows users to book cars. It is built using a microservice architecture with Next.js and ASP.NET."
-                demo='#'
-                github='https://github.com/YattuX/car-rental-micorservices-nextJs'
-            />
+        
             <ProjectCard
                 src="/alphax.PNG"
                 title='AlphaX'
@@ -43,6 +37,13 @@ export default function Projects() {
                 description= "This project is my portfolio. It is entirely made with Next.js, Framer Motion, and Tailwind."
                 demo='https://yattara.dev/'
                 github='https://github.com/YattuX/myPorfolio'
+            />
+            <ProjectCard
+                src="/carties.PNG"
+                title='Rental Car'
+                description= "This website allows users to book cars. It is built using a microservice architecture with Next.js and ASP.NET."
+                demo='#'
+                github='https://github.com/YattuX/car-rental-micorservices-nextJs'
             />
         </div>
     </div>

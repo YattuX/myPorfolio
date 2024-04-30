@@ -32,7 +32,7 @@ export default function Encryption() {
 
 
             <div className='Welcome-box px-[15px] py-[4px] z-[20] border my-[20px] border-[#7042f88b] opacity-[0.9]'>
-                <h1 className='Welcome-text '> Encryption</h1>
+                <h1 className='text-gray-200'> Encryption</h1>
             </div>  
         </div>
         <div className='absolute z-[20] -bottom-[165px] md:-bottom-[130px] px-[5px]'>
