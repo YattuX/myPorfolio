@@ -25,7 +25,7 @@ export default function ProjectCard({src, title, description, demo, github} : Pr
             <p className='mt-2 text-gray-300'>{description}</p>
         </div>
           <div className='flex justify-between p-4 '>
-            <a target="_blank" href={demo === "#" ? demo : "In Progress..."}  className='cursor-pointer absolute bottom-2 left-2 rounded-lg  px-4 text-cs bg-cyan-400  z-20'>Demo</a>
+            <a target="_blank" href={demo === "#" ? "In Progress..." : demo}  className='cursor-pointer absolute bottom-2 left-2 rounded-lg  px-4 text-cs bg-cyan-400  z-20'>Demo</a>
             <a target="_blank" href={github} className=' cursor-pointer absolute bottom-2 right-2 rounded-lg  px-4 text-cs bg-cyan-400 z-20'>Github</a>
           </div>
     </div>
