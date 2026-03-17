@@ -1,8 +1,7 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
-import { useRef } from "react";
 
 const EASE = [0.16, 1, 0.3, 1] as [number, number, number, number];
 
@@ -129,8 +128,6 @@ function DesktopCategoryCard({
         className="absolute top-0 left-0 right-0 h-20 pointer-events-none"
         style={{ background: `radial-gradient(ellipse at 50% 0%, ${cat.glow} 0%, transparent 75%)` }}
       />
-
-      {/* Header */}
       <div className="relative flex items-center gap-2.5 z-10">
         <div
           className="w-[3px] h-4 rounded-full flex-shrink-0"
@@ -143,8 +140,6 @@ function DesktopCategoryCard({
           {cat.label}
         </h3>
       </div>
-
-      {/* Bars */}
       <div className="relative z-10 flex flex-col gap-3 flex-1 justify-around">
         {cat.skills.map((s, i) => (
           <SkillBar
@@ -160,63 +155,90 @@ function DesktopCategoryCard({
 }
 
 /* ════════════════════════════════════════════════════════════════════════
-   MOBILE — circular progress per skill
+   MOBILE — full-width cards with large icons + skill bars
    ════════════════════════════════════════════════════════════════════════ */
-function CircularSkill({
-  src, name, level, accent, delay,
+function MobileSkillRow({
+  src, name, level, barFrom, barTo, accent, delay,
 }: {
-  src: string; name: string; level: number; accent: string; delay: number;
+  src: string; name: string; level: number;
+  barFrom: string; barTo: string; accent: string; delay: number;
 }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-  const size = 72;
-  const r = size * 0.36;
-  const cx = size / 2;
-
   return (
     <motion.div
-      ref={ref}
-      initial={{ opacity: 0, scale: 0.75 }}
-      animate={isInView ? { opacity: 1, scale: 1 } : {}}
-      transition={{ duration: 0.38, delay, ease: EASE }}
-      className="flex flex-col items-center gap-1"
+      initial={{ opacity: 0, x: -18 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true, margin: "-30px" }}
+      transition={{ duration: 0.48, delay, ease: EASE }}
+      className="flex items-center gap-4"
     >
-      <div className="relative flex-shrink-0" style={{ width: size, height: size }}>
-        <svg viewBox={`0 0 ${size} ${size}`} className="w-full h-full" style={{ transform: "rotate(-90deg)" }}>
-          <circle cx={cx} cy={cx} r={r} fill="none" stroke="rgba(255,255,255,0.07)" strokeWidth="4" />
-          <motion.circle
-            cx={cx} cy={cx} r={r}
-            fill="none" stroke={accent}
-            strokeWidth="4" strokeLinecap="round"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: isInView ? level / 100 : 0 }}
-            transition={{ duration: 1.2, delay: delay + 0.1, ease: EASE }}
-            style={{ filter: `drop-shadow(0 0 4px ${accent}88)` }}
-          />
-        </svg>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <Image src={src} alt={name} width={30} height={30} className="object-contain" />
-        </div>
+      {/* Icon container */}
+      <div
+        className="w-[52px] h-[52px] rounded-2xl flex items-center justify-center shrink-0 relative"
+        style={{
+          background: `linear-gradient(145deg, ${accent}18 0%, ${accent}08 100%)`,
+          border: `1px solid ${accent}30`,
+          boxShadow: `0 4px 16px ${accent}12, inset 0 1px 0 rgba(255,255,255,0.06)`,
+        }}
+      >
+        {/* Icon glow */}
         <div
-          className="absolute bottom-0 right-0 text-[8px] font-bold px-1 py-px rounded-full"
+          className="absolute inset-0 rounded-2xl pointer-events-none"
           style={{
-            background: accent + "22",
-            border: `1px solid ${accent}44`,
-            color: accent,
-            transform: "translate(20%, 20%)",
+            background: `radial-gradient(circle at 50% 30%, ${accent}14 0%, transparent 65%)`,
           }}
+        />
+        <Image src={src} alt={name} width={30} height={30} className="object-contain relative z-10" />
+      </div>
+
+      {/* Name + bar + badge */}
+      <div className="flex-1 min-w-0 flex flex-col gap-2">
+        <div className="flex items-center justify-between gap-2">
+          <span
+            className="text-[15px] font-bold truncate"
+            style={{ color: "rgba(228,220,255,0.96)" }}
+          >
+            {name}
+          </span>
+          <span
+            className="text-[11px] font-extrabold tabular-nums shrink-0 px-2 py-[3px] rounded-lg"
+            style={{
+              background: `${accent}18`,
+              border: `1px solid ${accent}35`,
+              color: accent,
+              textShadow: `0 0 10px ${accent}66`,
+            }}
+          >
+            {level}%
+          </span>
+        </div>
+
+        {/* Progress track */}
+        <div
+          className="relative h-[7px] w-full rounded-full overflow-hidden"
+          style={{ background: "rgba(255,255,255,0.07)" }}
         >
-          {level}%
+          {/* Track shimmer */}
+          <div
+            className="absolute inset-0 rounded-full"
+            style={{ background: "linear-gradient(90deg, rgba(255,255,255,0.03) 0%, transparent 100%)" }}
+          />
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: `${level}%` }}
+            viewport={{ once: true, margin: "-30px" }}
+            transition={{ duration: 1.3, delay: delay + 0.12, ease: EASE }}
+            className="absolute inset-y-0 left-0 rounded-full"
+            style={{
+              background: `linear-gradient(90deg, ${barFrom}, ${barTo})`,
+              boxShadow: `0 0 12px ${barFrom}60`,
+            }}
+          />
         </div>
       </div>
-      <span className="text-[9px] font-semibold text-center leading-tight" style={{ color: "rgba(220,212,255,0.92)" }}>
-        {name}
-      </span>
     </motion.div>
   );
 }
 
-/* 3-column card: one category per column */
 function MobileCategoryCard({
   cat, index,
 }: {
@@ -224,42 +246,79 @@ function MobileCategoryCard({
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 14 }}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.42, delay: index * 0.07, ease: EASE }}
-      className="relative flex flex-col gap-3 p-3 rounded-2xl overflow-hidden"
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.55, delay: index * 0.08, ease: EASE }}
+      className="relative p-5 rounded-2xl overflow-hidden"
       style={{
-        background: `linear-gradient(150deg, ${cat.glow} 0%, rgba(10,6,30,0.82) 100%)`,
+        background: `linear-gradient(150deg, ${cat.glow} 0%, rgba(8,5,26,0.88) 100%)`,
         border: `1px solid ${cat.border}`,
-        backdropFilter: "blur(16px)",
+        backdropFilter: "blur(20px)",
+        boxShadow: `0 8px 32px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.04)`,
       }}
     >
-      {/* top accent line */}
+      {/* Top accent line */}
       <div
-        className="absolute top-0 left-0 right-0 h-[1.5px]"
+        className="absolute top-0 left-[6%] right-[6%] h-[1.5px]"
         style={{ background: `linear-gradient(90deg, transparent, ${cat.accent}, transparent)` }}
       />
+      {/* Ambient header glow */}
+      <div
+        className="absolute top-0 left-0 right-0 h-28 pointer-events-none"
+        style={{ background: `radial-gradient(ellipse at 50% 0%, ${cat.glow} 0%, transparent 70%)` }}
+      />
 
-      {/* label */}
-      <div className="flex items-center justify-center gap-1.5 pt-0.5">
-        <div className="w-[2.5px] h-3 rounded-full flex-shrink-0" style={{ background: cat.accent }} />
-        <h3 className="text-[9px] font-bold tracking-[0.12em] uppercase" style={{ color: cat.accent }}>
-          {cat.shortLabel}
+      {/* Category header */}
+      <div className="relative flex items-center gap-3 mb-5 z-10">
+        <div
+          className="w-1 h-5 rounded-full shrink-0"
+          style={{ background: `linear-gradient(180deg, ${cat.barFrom}, ${cat.barTo})`, boxShadow: `0 0 10px ${cat.accent}` }}
+        />
+        <h3
+          className="text-[15px] font-extrabold tracking-wide"
+          style={{ color: cat.accent, textShadow: `0 0 18px ${cat.accent}55` }}
+        >
+          {cat.label}
         </h3>
+        <div
+          className="ml-auto flex items-center gap-1.5 px-2.5 py-1 rounded-full"
+          style={{
+            background: `${cat.accent}12`,
+            border: `1px solid ${cat.accent}28`,
+          }}
+        >
+          <span
+            className="w-1.5 h-1.5 rounded-full"
+            style={{ background: cat.accent, boxShadow: `0 0 6px ${cat.accent}` }}
+          />
+          <span
+            className="text-[10px] font-bold"
+            style={{ color: `${cat.accent}bb` }}
+          >
+            {cat.skills.length} skills
+          </span>
+        </div>
       </div>
 
-      {/* skills stacked */}
-      <div className="flex flex-col items-center gap-3">
+      {/* Skills list */}
+      <div className="relative z-10 flex flex-col gap-5">
         {cat.skills.map((s, i) => (
-          <CircularSkill
+          <MobileSkillRow
             key={s.name}
             src={s.src} name={s.name} level={s.level}
+            barFrom={cat.barFrom} barTo={cat.barTo}
             accent={cat.accent}
-            delay={index * 0.07 + i * 0.06}
+            delay={index * 0.08 + i * 0.07}
           />
         ))}
       </div>
+
+      {/* Bottom fade */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-8 pointer-events-none"
+        style={{ background: `linear-gradient(0deg, ${cat.glow} 0%, transparent 100%)` }}
+      />
     </motion.div>
   );
 }
@@ -341,7 +400,7 @@ function Header() {
 export default function Skills() {
   return (
     <>
-      {/* ── DESKTOP (lg+) : bars filling height ── */}
+      {/* ── DESKTOP (lg+) ── */}
       <section className="hidden lg:flex flex-col gap-3 w-full h-full min-h-0">
         <Header />
         <div className="flex-1 grid grid-cols-2 gap-3 min-h-0">
@@ -352,10 +411,10 @@ export default function Skills() {
         <StatsBar />
       </section>
 
-      {/* ── MOBILE (< lg) : 3 columns, one per category ── */}
+      {/* ── MOBILE (< lg) : stacked full-width cards ── */}
       <section className="flex lg:hidden flex-col gap-4 w-full">
         <Header />
-        <div className="grid grid-cols-3 gap-2.5">
+        <div className="flex flex-col gap-4">
           {CATEGORIES.map((cat, i) => (
             <MobileCategoryCard key={cat.id} cat={cat} index={i} />
           ))}
