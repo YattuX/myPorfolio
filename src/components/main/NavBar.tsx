@@ -78,7 +78,7 @@ export default function NavBar({ currentPage = "Home" }: NavBarProps) {
             </div>
             <span
               className="hidden sm:block text-[13px] font-semibold tracking-widest"
-              style={{ color: "rgba(220,210,255,0.75)" }}
+              style={{ color: "rgba(230,222,255,0.92)" }}
             >
               YattuX
             </span>
@@ -152,7 +152,7 @@ export default function NavBar({ currentPage = "Home" }: NavBarProps) {
               <FaLinkedin
                 size={17}
                 className="transition-colors duration-300 group-hover:text-[#0A66C2]"
-                style={{ color: "rgba(180,170,220,0.65)" }}
+                style={{ color: "rgba(205,195,245,0.85)" }}
               />
             </div>
           </a>

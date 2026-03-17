@@ -202,7 +202,7 @@ export default function Projects() {
             >
               Mes Projets
             </h2>
-            <p className="text-sm" style={{ color: "rgba(155,145,205,0.50)" }}>
+            <p className="text-sm" style={{ color: "rgba(178,168,225,0.75)" }}>
               Projets personnels &amp; professionnels
             </p>
             <div
@@ -237,7 +237,7 @@ export default function Projects() {
               </span>
               <span
                 className="text-2xl font-bold"
-                style={{ color: "rgba(150,140,200,0.28)" }}
+                style={{ color: "rgba(168,158,218,0.58)" }}
               >
                 / {pad(N)}
               </span>
@@ -249,7 +249,7 @@ export default function Projects() {
         <div
           className="relative flex-1 overflow-hidden rounded-3xl"
           style={{
-            background: "rgba(6,3,20,0.82)",
+            background: "rgba(12,7,32,0.82)",
             border: "1px solid rgba(167,139,250,0.10)",
             backdropFilter: "blur(24px)",
             boxShadow:
@@ -269,7 +269,7 @@ export default function Projects() {
               {/* Left — image */}
               <div
                 className="relative w-[58%] overflow-hidden"
-                style={{ background: "rgba(4,2,16,0.95)" }}
+                style={{ background: "rgba(10,6,28,0.90)" }}
               >
                 <div
                   className="absolute top-0 left-0 right-0 h-[2px] z-10"
@@ -290,7 +290,7 @@ export default function Projects() {
                   className="absolute inset-0 pointer-events-none"
                   style={{
                     background:
-                      "linear-gradient(90deg, transparent 42%, rgba(6,3,20,0.94) 100%)",
+                      "linear-gradient(90deg, transparent 42%, rgba(12,7,32,0.92) 100%)",
                   }}
                 />
                 {/* Bottom fade */}
@@ -298,7 +298,7 @@ export default function Projects() {
                   className="absolute inset-0 pointer-events-none"
                   style={{
                     background:
-                      "linear-gradient(180deg, transparent 55%, rgba(6,3,20,0.45) 100%)",
+                      "linear-gradient(180deg, transparent 55%, rgba(12,7,32,0.40) 100%)",
                   }}
                 />
                 {/* Watermark number */}
@@ -351,7 +351,7 @@ export default function Projects() {
                 {/* Description */}
                 <p
                   className="text-sm leading-relaxed"
-                  style={{ color: "rgba(175,165,225,0.68)" }}
+                  style={{ color: "rgba(198,188,248,0.88)" }}
                 >
                   {p.description}
                 </p>
@@ -360,7 +360,7 @@ export default function Projects() {
                 <div className="flex flex-col gap-2">
                   <span
                     className="text-[10px] font-bold tracking-[0.15em] uppercase"
-                    style={{ color: "rgba(150,140,200,0.42)" }}
+                    style={{ color: "rgba(172,162,222,0.68)" }}
                   >
                     Stack
                   </span>
@@ -403,9 +403,9 @@ export default function Projects() {
                     <span
                       className="flex items-center gap-2 px-5 py-[10px] rounded-xl font-semibold text-sm"
                       style={{
-                        background: "rgba(255,255,255,0.04)",
-                        border: "1px solid rgba(255,255,255,0.08)",
-                        color: "rgba(150,140,200,0.38)",
+                        background: "rgba(255,255,255,0.06)",
+                        border: "1px solid rgba(255,255,255,0.12)",
+                        color: "rgba(172,162,222,0.65)",
                       }}
                     >
                       En cours...
@@ -478,7 +478,7 @@ export default function Projects() {
             </h2>
             <p
               className="text-[11px] mt-0.5"
-              style={{ color: "rgba(155,145,205,0.45)" }}
+              style={{ color: "rgba(178,168,225,0.72)" }}
             >
               Projets personnels &amp; pro
             </p>
@@ -502,7 +502,7 @@ export default function Projects() {
               </span>
               <span
                 className="text-base font-bold"
-                style={{ color: "rgba(150,140,200,0.35)" }}
+                style={{ color: "rgba(168,158,218,0.62)" }}
               >
                 /{pad(N)}
               </span>
@@ -548,7 +548,7 @@ export default function Projects() {
                 className="absolute inset-0 pointer-events-none"
                 style={{
                   background:
-                    "linear-gradient(180deg, transparent 50%, rgba(4,2,16,0.60) 100%)",
+                    "linear-gradient(180deg, transparent 50%, rgba(10,6,28,0.55) 100%)",
                 }}
               />
             </div>
@@ -557,7 +557,7 @@ export default function Projects() {
             <div
               className="flex-1 flex flex-col gap-3 p-4 rounded-2xl overflow-hidden"
               style={{
-                background: "rgba(6,3,20,0.82)",
+                background: "rgba(12,7,32,0.82)",
                 border: "1px solid rgba(167,139,250,0.10)",
                 backdropFilter: "blur(16px)",
                 boxShadow: "0 8px 40px rgba(0,0,0,0.35)",
@@ -588,7 +588,7 @@ export default function Projects() {
               {/* Description */}
               <p
                 className="text-[13px] leading-relaxed line-clamp-3"
-                style={{ color: "rgba(175,165,225,0.65)" }}
+                style={{ color: "rgba(198,188,248,0.85)" }}
               >
                 {p.description}
               </p>
@@ -631,9 +631,9 @@ export default function Projects() {
                   <span
                     className="flex-1 flex items-center justify-center py-[11px] rounded-xl font-semibold text-[12px]"
                     style={{
-                      background: "rgba(255,255,255,0.04)",
-                      border: "1px solid rgba(255,255,255,0.08)",
-                      color: "rgba(150,140,200,0.38)",
+                      background: "rgba(255,255,255,0.06)",
+                      border: "1px solid rgba(255,255,255,0.12)",
+                      color: "rgba(172,162,222,0.65)",
                     }}
                   >
                     En cours...

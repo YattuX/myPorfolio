@@ -75,10 +75,10 @@ function SkillBar({
         <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center">
           <Image src={src} alt={name} width={30} height={30} className="object-contain" />
         </div>
-        <span className="flex-1 text-sm font-semibold" style={{ color: "rgba(210,200,255,0.85)" }}>
+        <span className="flex-1 text-sm font-semibold" style={{ color: "rgba(225,218,255,0.96)" }}>
           {name}
         </span>
-        <span className="text-xs font-bold tabular-nums" style={{ color: "rgba(180,170,230,0.50)" }}>
+        <span className="text-xs font-bold tabular-nums" style={{ color: "rgba(195,185,245,0.75)" }}>
           {level}%
         </span>
       </div>
@@ -115,7 +115,7 @@ function DesktopCategoryCard({
       transition={{ duration: 0.5, delay: index * 0.10, ease: EASE }}
       className={`relative flex flex-col gap-4 p-6 rounded-2xl overflow-hidden ${className}`}
       style={{
-        background: `linear-gradient(150deg, ${cat.glow} 0%, rgba(4,2,18,0.78) 100%)`,
+        background: `linear-gradient(150deg, ${cat.glow} 0%, rgba(10,6,30,0.78) 100%)`,
         border: `1px solid ${cat.border}`,
         backdropFilter: "blur(20px)",
         boxShadow: "0 8px 40px rgba(0,0,0,0.38), inset 0 1px 0 rgba(255,255,255,0.05)",
@@ -209,7 +209,7 @@ function CircularSkill({
           {level}%
         </div>
       </div>
-      <span className="text-[9px] font-semibold text-center leading-tight" style={{ color: "rgba(210,200,255,0.75)" }}>
+      <span className="text-[9px] font-semibold text-center leading-tight" style={{ color: "rgba(220,212,255,0.92)" }}>
         {name}
       </span>
     </motion.div>
@@ -230,7 +230,7 @@ function MobileCategoryCard({
       transition={{ duration: 0.42, delay: index * 0.07, ease: EASE }}
       className="relative flex flex-col gap-3 p-3 rounded-2xl overflow-hidden"
       style={{
-        background: `linear-gradient(150deg, ${cat.glow} 0%, rgba(4,2,18,0.82) 100%)`,
+        background: `linear-gradient(150deg, ${cat.glow} 0%, rgba(10,6,30,0.82) 100%)`,
         border: `1px solid ${cat.border}`,
         backdropFilter: "blur(16px)",
       }}
@@ -297,7 +297,7 @@ function StatsBar() {
           >
             {s.value}
           </span>
-          <span className="text-xs" style={{ color: "rgba(155,145,205,0.50)" }}>{s.label}</span>
+          <span className="text-xs" style={{ color: "rgba(178,168,225,0.75)" }}>{s.label}</span>
         </div>
       ))}
     </motion.div>
@@ -327,7 +327,7 @@ function Header() {
       >
         Stack technique
       </h2>
-      <p className="text-sm" style={{ color: "rgba(155,145,205,0.50)" }}>
+      <p className="text-sm" style={{ color: "rgba(178,168,225,0.75)" }}>
         Niveau de maîtrise par technologie
       </p>
       <div className="h-px w-16 mt-1" style={{ background: "linear-gradient(90deg, rgba(167,139,250,0.7), transparent)" }} />

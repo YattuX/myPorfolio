@@ -86,7 +86,7 @@ function HeroText({ isMobile = false, onNavigate }: { isMobile?: boolean; onNavi
       <motion.p
         variants={fadeUp}
         className="text-sm tracking-[0.18em] uppercase -mb-2"
-        style={{ color: "rgba(167,139,250,0.68)" }}
+        style={{ color: "rgba(167,139,250,0.88)" }}
       >
         Hello, je suis
       </motion.p>
@@ -121,7 +121,7 @@ function HeroText({ isMobile = false, onNavigate }: { isMobile?: boolean; onNavi
       <motion.p
         variants={fadeUp}
         className="text-lg font-semibold tracking-wide"
-        style={{ color: "rgba(195,185,240,0.72)" }}
+        style={{ color: "rgba(210,200,255,0.90)" }}
       >
         Analyste Développeur
       </motion.p>
@@ -130,7 +130,7 @@ function HeroText({ isMobile = false, onNavigate }: { isMobile?: boolean; onNavi
       <motion.p
         variants={fadeUp}
         className={`text-[15px] leading-relaxed ${isMobile ? "max-w-[400px]" : "max-w-[600px]"}`}
-        style={{ color: "rgba(155,145,205,0.62)" }}
+        style={{ color: "rgba(185,175,235,0.82)" }}
       >
         J'analyse, conçois et déploie des solutions logicielles robustes —
         en alliant rigueur fonctionnelle, architecture technique maîtrisée
@@ -174,7 +174,7 @@ function HeroText({ isMobile = false, onNavigate }: { isMobile?: boolean; onNavi
 
       {/* Socials */}
       <motion.div variants={fadeUp} className="flex items-center gap-3">
-        <span className="text-[11px] tracking-widest uppercase" style={{ color: "rgba(130,120,180,0.45)" }}>
+        <span className="text-[11px] tracking-widest uppercase" style={{ color: "rgba(160,150,210,0.70)" }}>
           Suivre sur
         </span>
         <div className="h-px w-10" style={{ background: "linear-gradient(90deg, rgba(130,120,180,0.3), transparent)" }} />
@@ -186,7 +186,7 @@ function HeroText({ isMobile = false, onNavigate }: { isMobile?: boolean; onNavi
             className="group p-2 rounded-xl transition-colors duration-300 hover:bg-white/[0.07]"
           >
             <span className="block transition-all duration-300 group-hover:scale-110"
-              style={{ color: "rgba(170,160,220,0.52)" }}
+              style={{ color: "rgba(195,185,245,0.78)" }}
             >{s.icon}</span>
           </a>
         ))}
@@ -211,7 +211,7 @@ function HeroText({ isMobile = false, onNavigate }: { isMobile?: boolean; onNavi
                 backgroundClip: "text",
               }}
             >{s.value}</span>
-            <span className="text-[10px] font-medium mt-0.5" style={{ color: "rgba(150,140,200,0.52)" }}>
+            <span className="text-[10px] font-medium mt-0.5" style={{ color: "rgba(178,168,228,0.75)" }}>
               {s.label}
             </span>
           </div>

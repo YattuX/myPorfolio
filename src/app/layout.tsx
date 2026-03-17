@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${spaceGrotesk.className} bg-[#030014] overflow-hidden h-screen w-screen`}>
+      <body className={`${spaceGrotesk.className} bg-[#080420] overflow-hidden h-screen w-screen`}>
         {/* 3D star background — fixed across all pages */}
         <StarsCanvas />
         {children}
