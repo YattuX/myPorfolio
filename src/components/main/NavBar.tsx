@@ -78,7 +78,7 @@ export default function NavBar({
               >
                 <Image
                   src="/Logo_.png"
-                  alt="YattuX"
+                  alt="Yattara"
                   width={34}
                   height={34}
                   className="transition-all duration-700 ease-out group-hover:rotate-[360deg] group-hover:scale-105"
@@ -89,7 +89,7 @@ export default function NavBar({
               className="hidden sm:block text-[13px] font-semibold tracking-widest"
               style={{ color: "rgba(230,222,255,0.92)" }}
             >
-              YattuX
+              Yattara
             </span>
           </a>
 

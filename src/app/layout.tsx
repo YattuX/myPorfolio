@@ -3,7 +3,7 @@ import "./globals.css";
 import StarsCanvas from "@/components/main/StartBackGround";
 
 export const metadata: Metadata = {
-  title: "YattuX",
+  title: "Yattara",
   description: "This is my portfolio",
 };
 

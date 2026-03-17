@@ -308,7 +308,7 @@ function MobileFooter() {
             className="text-[11px] font-bold tracking-[0.20em] uppercase"
             style={{ color: "rgba(167,139,250,0.45)" }}
           >
-            YattuX
+            Yattara
           </span>
           <div
             className="w-1.5 h-1.5 rounded-full"

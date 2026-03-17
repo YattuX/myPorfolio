@@ -31,7 +31,7 @@ export default function Footer() {
                 </div>
 
                 <div className=' my-[15px] text-[15px] text-center'>
-                    &copy; YattuX Dev. All rights reserved 
+                    &copy; Yattara Dev. All rights reserved 
                 </div>
             </div>
         </div>
