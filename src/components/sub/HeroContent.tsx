@@ -30,7 +30,7 @@ const fadeRight = {
 
 const STATS = [
   { value: "5+", label: "Projets"  },
-  { value: "3+", label: "Années"   },
+  { value: "4+", label: "Années"   },
   { value: "2",  label: "Domaines" },
 ];
 

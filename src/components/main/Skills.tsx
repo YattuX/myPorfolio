@@ -341,8 +341,7 @@ function StatsBar() {
     >
       {[
         { value: "9",  label: "Technologies" },
-        { value: "3",  label: "Domaines"     },
-        { value: "3+", label: "Années d'expérience" },
+        { value: "4+", label: "Années d'expérience" },
       ].map((s) => (
         <div key={s.label} className="flex items-baseline gap-2">
           <span
