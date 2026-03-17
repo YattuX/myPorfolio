@@ -6,10 +6,9 @@ import React, { Suspense, useRef, useState } from 'react'
 import * as random from 'maath/random/dist/maath-random.esm'
 import { Canvas, useFrame } from '@react-three/fiber';
 import { PointMaterial, Points } from '@react-three/drei';
-import { div } from 'three/examples/jsm/nodes/Nodes.js';
 
 export function StartBackGround(props : any) {
-    const ref: any = useRef();
+    const ref: any = useRef(null);
     const [sphere] = useState(()=>
         random.inSphere(new Float32Array(5000), {radius: 1.2})
     );
@@ -29,10 +28,10 @@ export function StartBackGround(props : any) {
         {...props}>
             <PointMaterial
                 transparent
-                color="$fff"
+                color="#fff"
                 size={0.002}
-                sixeAttenuation={true}
-                dethWrite={false}
+                sizeAttenuation={true}
+                depthWrite={false}
                 />
         </Points>
     </group>
@@ -41,8 +40,8 @@ export function StartBackGround(props : any) {
 
  export default function StarsCanvas (){
    return (
-    <div className="w-full h-auto fixed inset-0 z-[20]">
-        <Canvas camera={{position: [0,0, 1]}}>
+    <div className="w-full h-auto fixed inset-0 z-[20] pointer-events-none">
+        <Canvas camera={{position: [0,0, 1]}} style={{ pointerEvents: 'none' }}>
             <Suspense fallback={null}>
                 <StartBackGround/>
             </Suspense>

@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import StarsCanvas from "@/components/main/StartBackGround";
-import NavBar from "@/components/main/NavBar";
-import Footer from "@/components/main/Footer";
 
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"] });
 
 export const metadata: Metadata = {
   title: "YattuX",
@@ -18,12 +17,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={` bg-[#030014] overflow-y-scroll overflow-x-hidden`}>
-        <StarsCanvas/>
-        <NavBar/>
+      <body className={`${spaceGrotesk.className} bg-[#030014] overflow-hidden h-screen w-screen`}>
+        {/* 3D star background — fixed across all pages */}
+        <StarsCanvas />
         {children}
-        <Footer/>
-        </body>
+      </body>
     </html>
   );
 }
