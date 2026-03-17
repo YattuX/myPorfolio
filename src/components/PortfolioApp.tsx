@@ -116,7 +116,7 @@ export default function PortfolioApp() {
             animate="visible"
             exit="exit"
             transition={{ duration: 0.50, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute inset-0 overflow-y-auto scrollbar-hidden"
+            className={`absolute inset-0 scrollbar-hidden ${currentPage === "projects" ? "overflow-y-auto" : "overflow-hidden"}`}
           >
             {/*
               Padding:
@@ -124,8 +124,8 @@ export default function PortfolioApp() {
               - left:   256px  → clears left TabNav + separator (lg+)
               - bottom: 100px  → clears mobile bottom TabNav
             */}
-            <div className="min-h-full w-full pt-[100px] pb-[120px] lg:pb-8 lg:pt-[90px] lg:pl-[256px]">
-              <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-8 xl:px-12">
+            <div className={`w-full pt-[100px] pb-[120px] lg:pb-8 lg:pt-[90px] lg:pl-[256px] ${currentPage === "projects" ? "min-h-full" : "h-full"}`}>
+              <div className={`max-w-7xl mx-auto px-6 sm:px-10 lg:px-8 xl:px-12 ${currentPage !== "projects" ? "h-full" : ""}`}>
                 {currentPage === "home"     && <Hero onNavigate={navigate} />}
                 {currentPage === "skills"   && <Skills />}
                 {currentPage === "projects" && <Projects />}

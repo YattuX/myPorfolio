@@ -50,7 +50,7 @@ function HeroText({ isMobile = false, onNavigate }: { isMobile?: boolean; onNavi
       variants={container}
       initial="hidden"
       animate="visible"
-      className={`flex flex-col ${isMobile ? "gap-3" : "gap-5"} ${isMobile ? "items-center text-center" : "items-start text-left"}`}
+      className={`flex flex-col ${isMobile ? "gap-3" : "gap-3"} ${isMobile ? "items-center text-center" : "items-start text-left"}`}
     >
       {/* Available status — desktop only */}
       <motion.div
@@ -96,7 +96,7 @@ function HeroText({ isMobile = false, onNavigate }: { isMobile?: boolean; onNavi
         <h1
           className="font-extrabold leading-tight text-white"
           style={{
-            fontSize: isMobile ? "clamp(38px, 10vw, 52px)" : "clamp(48px, 5vw, 72px)",
+            fontSize: isMobile ? "clamp(38px, 10vw, 52px)" : "clamp(40px, 4.5vw, 62px)",
             letterSpacing: "-0.02em",
           }}
         >
@@ -105,7 +105,7 @@ function HeroText({ isMobile = false, onNavigate }: { isMobile?: boolean; onNavi
         <h1
           className="font-extrabold leading-tight"
           style={{
-            fontSize: isMobile ? "clamp(38px, 10vw, 52px)" : "clamp(48px, 5vw, 72px)",
+            fontSize: isMobile ? "clamp(38px, 10vw, 52px)" : "clamp(40px, 4.5vw, 62px)",
             letterSpacing: "-0.02em",
             background: "linear-gradient(100deg, #e879f9 0%, #a78bfa 40%, #67e8f9 100%)",
             WebkitBackgroundClip: "text",
@@ -230,7 +230,7 @@ function DesktopVisual() {
       animate="visible"
       className="hidden lg:flex flex-shrink-0 items-center justify-center"
     >
-      <div className="relative w-[460px] h-[460px] xl:w-[540px] xl:h-[540px]">
+      <div className="relative w-[360px] h-[360px] lg:w-[420px] lg:h-[420px] xl:w-[480px] xl:h-[480px]">
         {/* Ambient glow orbs */}
         <div className="absolute inset-0 rounded-full pointer-events-none"
           style={{ background: "radial-gradient(circle, rgba(112,66,248,0.22) 0%, transparent 65%)", filter: "blur(50px)" }}
@@ -351,7 +351,7 @@ export default function HeroContent({ onNavigate }: { onNavigate?: (id: string) 
   return (
     <section
       id="about-me"
-      className="flex items-center w-full py-4 lg:py-10 min-h-[calc(100dvh-220px)] lg:min-h-[calc(100vh-120px)]"
+      className="flex items-center w-full py-2 lg:py-4 h-full"
     >
       {/* ── Mobile / Tablet layout (< lg) ── */}
       <div className="lg:hidden w-full flex flex-col items-center gap-4">
@@ -360,7 +360,7 @@ export default function HeroContent({ onNavigate }: { onNavigate?: (id: string) 
       </div>
 
       {/* ── Desktop layout (≥ lg) ── */}
-      <div className="hidden lg:flex w-full items-center gap-12 xl:gap-20">
+      <div className="hidden lg:flex w-full items-center gap-12 xl:gap-20 h-full">
         <div className="flex-1 min-w-0">
           <HeroText onNavigate={onNavigate} />
         </div>

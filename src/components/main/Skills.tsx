@@ -69,11 +69,11 @@ function SkillBar({
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.42, delay, ease: EASE }}
-      className="flex flex-col gap-1.5"
+      className="flex flex-col gap-1"
     >
-      <div className="flex items-center gap-3">
-        <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center">
-          <Image src={src} alt={name} width={30} height={30} className="object-contain" />
+      <div className="flex items-center gap-2.5">
+        <div className="w-7 h-7 flex-shrink-0 flex items-center justify-center">
+          <Image src={src} alt={name} width={26} height={26} className="object-contain" />
         </div>
         <span className="flex-1 text-sm font-semibold" style={{ color: "rgba(225,218,255,0.96)" }}>
           {name}
@@ -113,7 +113,7 @@ function DesktopCategoryCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.10, ease: EASE }}
-      className={`relative flex flex-col gap-4 p-6 rounded-2xl overflow-hidden ${className}`}
+      className={`relative flex flex-col gap-3 p-4 rounded-2xl overflow-hidden ${className}`}
       style={{
         background: `linear-gradient(150deg, ${cat.glow} 0%, rgba(10,6,30,0.78) 100%)`,
         border: `1px solid ${cat.border}`,
@@ -145,7 +145,7 @@ function DesktopCategoryCard({
       </div>
 
       {/* Bars */}
-      <div className="relative z-10 flex flex-col gap-4 flex-1 justify-around">
+      <div className="relative z-10 flex flex-col gap-3 flex-1 justify-around">
         {cat.skills.map((s, i) => (
           <SkillBar
             key={s.name}
@@ -342,12 +342,9 @@ export default function Skills() {
   return (
     <>
       {/* ── DESKTOP (lg+) : bars filling height ── */}
-      <section
-        className="hidden lg:flex flex-col gap-6 w-full"
-        style={{ minHeight: "calc(100vh - 210px)" }}
-      >
+      <section className="hidden lg:flex flex-col gap-3 w-full h-full min-h-0">
         <Header />
-        <div className="flex-1 grid grid-cols-2 gap-5">
+        <div className="flex-1 grid grid-cols-2 gap-3 min-h-0">
           <DesktopCategoryCard cat={CATEGORIES[0]} index={0} />
           <DesktopCategoryCard cat={CATEGORIES[1]} index={1} />
           <DesktopCategoryCard cat={CATEGORIES[2]} index={2} className="col-span-2" />
